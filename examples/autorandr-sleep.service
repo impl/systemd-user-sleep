@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2022 Noah Fontes
+#
+# SPDX-License-Identifier: Apache-2.0
+
+[Unit]
+Description=autorandr
+Before=sleep.target
+StopWhenUnneeded=yes
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStop=autorandr --change --default default
+
+[Install]
+WantedBy=sleep.target

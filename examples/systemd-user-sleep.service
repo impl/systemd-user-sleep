@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2022 Noah Fontes
+#
+# SPDX-License-Identifier: Apache-2.0
+
+[Unit]
+Description=System sleep monitor
+
+[Service]
+ExecStart=systemd-user-sleep --activate sleep.target
+Restart=on-failure
+LogLevelMax=info
+
+[Install]
+WantedBy=default.target
